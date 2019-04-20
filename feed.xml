@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://wkozaczuk.github.io//github/feed.xml" rel="self" type="application/atom+xml" /><link href="http://wkozaczuk.github.io//github/" rel="alternate" type="text/html" /><updated>2019-04-19T23:03:15-04:00</updated><id>http://wkozaczuk.github.io//github/feed.xml</id><title type="html">OSv Blog</title><author><name>Cloudius Systems</name></author><entry><title type="html">Making OSv Run on Firecracker</title><link href="http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/" rel="alternate" type="text/html" title="Making OSv Run on Firecracker" /><published>2019-04-05T10:00:00-04:00</published><updated>2019-04-05T10:00:00-04:00</updated><id>http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker</id><content type="html" xml:base="http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/">&lt;p&gt;&lt;strong&gt;By: Waldek Kozaczuk&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://wkozaczuk.github.io//github/feed.xml" rel="self" type="application/atom+xml" /><link href="http://wkozaczuk.github.io//github/" rel="alternate" type="text/html" /><updated>2019-04-20T00:09:01-04:00</updated><id>http://wkozaczuk.github.io//github/feed.xml</id><title type="html">OSv Blog</title><author><name>Cloudius Systems</name></author><entry><title type="html">Making OSv Run on Firecracker</title><link href="http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/" rel="alternate" type="text/html" title="Making OSv Run on Firecracker" /><published>2019-04-05T10:00:00-04:00</published><updated>2019-04-05T10:00:00-04:00</updated><id>http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker</id><content type="html" xml:base="http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/">&lt;p&gt;&lt;strong&gt;By: Waldek Kozaczuk&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;firecracker&quot;&gt;Firecracker&lt;/h2&gt;
 
@@ -59,7 +59,7 @@
 
 &lt;p&gt;The code below is slightly modified version of &lt;a href=&quot;https://github.com/cloudius-systems/osv/blob/master/arch/x64/vmlinux-boot64.S&quot;&gt;vmlinux_entry64 in vmlinux-boot64.S&lt;/a&gt; that implements the steps described above in GAS (GNU Assembler) language.&lt;/p&gt;
 
-&lt;pre class=&quot;prettyprint lang-gas&quot;&gt;
+&lt;pre class=&quot;prettyprint lang-gas my-gas&quot;&gt;
 # Call extract_linux_boot_params with the address of
 # boot_params struct passed in RSI register to 
 # extract cmdline and memory information

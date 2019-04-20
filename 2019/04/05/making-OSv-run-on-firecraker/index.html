@@ -51,6 +51,7 @@ Fir...">
   <link href="/favicon.ico" rel="icon">
   <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/blog/stylesheets/monokai.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/blog/stylesheets/customized.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/blog/atom.xml" rel="alternate" title="OSv Blog" type="application/atom+xml">
   <script src="/blog/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -232,7 +233,7 @@ Fir...">
 
 <p>The code below is slightly modified version of <a href="https://github.com/cloudius-systems/osv/blob/master/arch/x64/vmlinux-boot64.S">vmlinux_entry64 in vmlinux-boot64.S</a> that implements the steps described above in GAS (GNU Assembler) language.</p>
 
-<pre class="prettyprint lang-gas">
+<pre class="prettyprint lang-gas my-gas">
 # Call extract_linux_boot_params with the address of
 # boot_params struct passed in RSI register to 
 # extract cmdline and memory information
