@@ -29,7 +29,7 @@
 
 
 
-Apr 5, 2019
+Apr 19, 2019
         
       
     
@@ -38,7 +38,7 @@ Apr 5, 2019
 
 By: Waldek Kozaczuk
 
-Fir...">
+Fi...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -47,7 +47,7 @@ Fir...">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/">
+  <link rel="canonical" href="http://wkozaczuk.github.io//github/blog/2019/04/19/making-OSv-run-on-firecraker/">
   <link href="/favicon.ico" rel="icon">
   <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/blog/stylesheets/monokai.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -165,7 +165,7 @@ Fir...">
 
 
 
-<time datetime="2019-04-05T10:00:00-04:00" pubdate data-updated="true">Apr 5, 2019</time>
+<time datetime="2019-04-19T10:00:00-04:00" pubdate data-updated="true">Apr 19, 2019</time>
         
       </p>
     
@@ -191,7 +191,7 @@ Fir...">
 
 <p>Firecracker also exposes REST API over UNIX domain socket and can be confined to improve security through so called <em>jailer</em>. For more details look at <a href="https://github.com/firecracker-microvm/firecracker/blob/master/docs/design.md">the design doc</a> and <a href="https://github.com/firecracker-microvm/firecracker/blob/master/SPECIFICATION.md">the specification</a>.</p>
 
-<p>If you want to hear more about what it took to enhance OSv to make it <strong>boot in 5 ms</strong> on Firecracker (total of <strong>10 ms</strong> including the host side) which is <strong>~20 times faster than Linux</strong> on the same hardware, please read remaining part of this article. In the next paragraph I will describe the implementation strategy I arrived at. In the following three paragraphs I will focus on what I had to change in relevant areas - booting process, VirtIO and ACPI. Finally in the epilogue I will describe the outcome of this exercise and possible improvements we can make and benefit from in future.</p>
+<p>If you want to hear more about what it took to enhance OSv to make it <strong>boot in 5 ms</strong> on Firecracker (total of <strong>10 ms</strong> including the host side) which is <strong>~20 times faster than Linux</strong> on the same hardware (5 years old MacBook Pro with Ubuntu 18.10), please read remaining part of this article. In the next paragraph I will describe the implementation strategy I arrived at. In the following three paragraphs I will focus on what I had to change in relevant areas - booting process, VirtIO and ACPI. Finally in the epilogue I will describe the outcome of this exercise and possible improvements we can make and benefit from in future.</p>
 
 <p>If you want to try OSv on Firecracker before reading this article follow <a href="https://github.com/cloudius-systems/osv/wiki/Running-OSv-on-Firecracker">this wiki</a>.</p>
 
@@ -347,14 +347,6 @@ All in all I had to enhance OSv in following ways:</p>
 
 <h2 id="epilogue">Epilogue</h2>
 
-<p>TODO:</p>
-<ul>
-  <li>add specification of the machine (my laptop I used for tests)</li>
-  <li>mention and point to how much faster some apps were on OSv on FC vs Linux on FC (possibly generate graphs)</li>
-  <li>mention it would be nice to see how fast it boots on i3.metal</li>
-  <li>mention it would be nice to run a test with iperf to see how many OSv microVMs can be created per second</li>
-</ul>
-
 <p>With all changes implemented as described above OSv can boot on Firecracker.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OSv v0.53.0-6-gc8395118
@@ -403,7 +395,7 @@ Other areas of interest to improve are memory utilization - OSv needs minimum of
 
 
 
-<time datetime="2019-04-05T10:00:00-04:00" pubdate data-updated="true">Apr 5, 2019</time>
+<time datetime="2019-04-19T10:00:00-04:00" pubdate data-updated="true">Apr 19, 2019</time>
       
 
 
@@ -452,7 +444,7 @@ Other areas of interest to improve are memory utilization - OSv needs minimum of
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2019/04/05/making-OSv-run-on-firecraker/">Making OSv Run on Firecracker</a>
+        <a href="/blog/2019/04/19/making-OSv-run-on-firecraker/">Making OSv Run on Firecracker</a>
       </li>
     
       <li class="post">
@@ -514,8 +506,8 @@ Other areas of interest to improve are memory utilization - OSv needs minimum of
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.osv.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/';
-        var disqus_url = 'http://blog.osv.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/';
+        var disqus_identifier = 'http://blog.osv.io//github/blog/2019/04/19/making-OSv-run-on-firecraker/';
+        var disqus_url = 'http://blog.osv.io//github/blog/2019/04/19/making-OSv-run-on-firecraker/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://wkozaczuk.github.io//github/feed.xml" rel="self" type="application/atom+xml" /><link href="http://wkozaczuk.github.io//github/" rel="alternate" type="text/html" /><updated>2019-04-20T00:09:01-04:00</updated><id>http://wkozaczuk.github.io//github/feed.xml</id><title type="html">OSv Blog</title><author><name>Cloudius Systems</name></author><entry><title type="html">Making OSv Run on Firecracker</title><link href="http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/" rel="alternate" type="text/html" title="Making OSv Run on Firecracker" /><published>2019-04-05T10:00:00-04:00</published><updated>2019-04-05T10:00:00-04:00</updated><id>http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker</id><content type="html" xml:base="http://wkozaczuk.github.io//github/blog/2019/04/05/making-OSv-run-on-firecraker/">&lt;p&gt;&lt;strong&gt;By: Waldek Kozaczuk&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://wkozaczuk.github.io//github/feed.xml" rel="self" type="application/atom+xml" /><link href="http://wkozaczuk.github.io//github/" rel="alternate" type="text/html" /><updated>2019-04-20T00:44:15-04:00</updated><id>http://wkozaczuk.github.io//github/feed.xml</id><title type="html">OSv Blog</title><author><name>Cloudius Systems</name></author><entry><title type="html">Making OSv Run on Firecracker</title><link href="http://wkozaczuk.github.io//github/blog/2019/04/19/making-OSv-run-on-firecraker/" rel="alternate" type="text/html" title="Making OSv Run on Firecracker" /><published>2019-04-19T10:00:00-04:00</published><updated>2019-04-19T10:00:00-04:00</updated><id>http://wkozaczuk.github.io//github/blog/2019/04/19/making-OSv-run-on-firecraker</id><content type="html" xml:base="http://wkozaczuk.github.io//github/blog/2019/04/19/making-OSv-run-on-firecraker/">&lt;p&gt;&lt;strong&gt;By: Waldek Kozaczuk&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;firecracker&quot;&gt;Firecracker&lt;/h2&gt;
 
@@ -17,7 +17,7 @@
 
 &lt;p&gt;Firecracker also exposes REST API over UNIX domain socket and can be confined to improve security through so called &lt;em&gt;jailer&lt;/em&gt;. For more details look at &lt;a href=&quot;https://github.com/firecracker-microvm/firecracker/blob/master/docs/design.md&quot;&gt;the design doc&lt;/a&gt; and &lt;a href=&quot;https://github.com/firecracker-microvm/firecracker/blob/master/SPECIFICATION.md&quot;&gt;the specification&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you want to hear more about what it took to enhance OSv to make it &lt;strong&gt;boot in 5 ms&lt;/strong&gt; on Firecracker (total of &lt;strong&gt;10 ms&lt;/strong&gt; including the host side) which is &lt;strong&gt;~20 times faster than Linux&lt;/strong&gt; on the same hardware, please read remaining part of this article. In the next paragraph I will describe the implementation strategy I arrived at. In the following three paragraphs I will focus on what I had to change in relevant areas - booting process, VirtIO and ACPI. Finally in the epilogue I will describe the outcome of this exercise and possible improvements we can make and benefit from in future.&lt;/p&gt;
+&lt;p&gt;If you want to hear more about what it took to enhance OSv to make it &lt;strong&gt;boot in 5 ms&lt;/strong&gt; on Firecracker (total of &lt;strong&gt;10 ms&lt;/strong&gt; including the host side) which is &lt;strong&gt;~20 times faster than Linux&lt;/strong&gt; on the same hardware (5 years old MacBook Pro with Ubuntu 18.10), please read remaining part of this article. In the next paragraph I will describe the implementation strategy I arrived at. In the following three paragraphs I will focus on what I had to change in relevant areas - booting process, VirtIO and ACPI. Finally in the epilogue I will describe the outcome of this exercise and possible improvements we can make and benefit from in future.&lt;/p&gt;
 
 &lt;p&gt;If you want to try OSv on Firecracker before reading this article follow &lt;a href=&quot;https://github.com/cloudius-systems/osv/wiki/Running-OSv-on-Firecracker&quot;&gt;this wiki&lt;/a&gt;.&lt;/p&gt;
 
@@ -172,14 +172,6 @@ All in all I had to enhance OSv in following ways:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;epilogue&quot;&gt;Epilogue&lt;/h2&gt;
-
-&lt;p&gt;TODO:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;add specification of the machine (my laptop I used for tests)&lt;/li&gt;
-  &lt;li&gt;mention and point to how much faster some apps were on OSv on FC vs Linux on FC (possibly generate graphs)&lt;/li&gt;
-  &lt;li&gt;mention it would be nice to see how fast it boots on i3.metal&lt;/li&gt;
-  &lt;li&gt;mention it would be nice to run a test with iperf to see how many OSv microVMs can be created per second&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;p&gt;With all changes implemented as described above OSv can boot on Firecracker.&lt;/p&gt;
 
